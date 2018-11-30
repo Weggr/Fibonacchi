@@ -30,7 +30,7 @@ public class Quicksort{
     nombre[pivot]=nombre[j];
     nombre[j]=temp;
     quicksort(nombre,premier,j-1);
-    quicksort(nombre,j+1,premier);
+    quicksort(nombre,j+1,dernier);
 
     }
   }
@@ -58,5 +58,6 @@ public class Quicksort{
      {
        System.out.print(nombre[i] + " ");
      }
+     System.out.println();
   }
 }
