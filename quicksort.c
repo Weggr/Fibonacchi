@@ -2,7 +2,7 @@
 void quicksort(int *nombre,int premier,int dernier){
    int i, j, pivot, temp;
 
-   if(first<last){
+   if(premier<dernier){
       pivot=premier;
       i=premier;
       j=dernier;
@@ -22,8 +22,8 @@ void quicksort(int *nombre,int premier,int dernier){
       temp=nombre[pivot];
       nombre[pivot]=nombre[j];
       nombre[j]=temp;
-      quicksort(number,first,j-1);
-      quicksort(number,j+1,last);
+      quicksort(nombre,premier,j-1);
+      quicksort(nombre,j+1,dernier);
 
    }
 }
@@ -36,9 +36,12 @@ int main(){
    
    int nombre[compteur];
   
-   printf("Entrez l'élement numéro %d : ", compteur);
+   
    for(i=0;i<compteur;i++)
+   {
+      printf("Entrez l'élement numéro %d : ", i+1);
       scanf("%d",&nombre[i]);
+   }
 
    quicksort(nombre,0,compteur-1);
 
