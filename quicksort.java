@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class quicksort{
+public class Quicksort{
   public static void quicksort(int nombre[],int premier,int dernier){
     int i, j, pivot, temp;
 
-    if(first<last){
+    if(premier<dernier){
         pivot=premier;
         i=premier;
         j=dernier;
@@ -29,8 +29,8 @@ public class quicksort{
     temp=nombre[pivot];
     nombre[pivot]=nombre[j];
     nombre[j]=temp;
-    quicksort(number,first,j-1);
-    quicksort(number,j+1,last);
+    quicksort(nombre,premier,j-1);
+    quicksort(nombre,j+1,premier);
 
     }
   }
@@ -42,11 +42,12 @@ public class quicksort{
      System.out.println("Combien d'élements allez vous rentrer?: ");
      int compteur = keyb.nextInt();
    
-     int nombre[compteur];
+     int nombre[]= new int[compteur];
   
-     System.out.println("Entrez l'élement numéro " + compteur + " : ");
+     
      for(i=0;i<compteur;i++)
      {
+    	System.out.println("Entrez l'élement numéro " + (i+1) + " : ");
         nombre[i] = keyb.nextInt();
      }
 
@@ -55,7 +56,7 @@ public class quicksort{
      System.out.println("Les éléments dans l'ordre: ");
      for(i=0;i<compteur;i++)
      {
-       System.out.println(nombre[i]);
+       System.out.print(nombre[i] + " ");
      }
   }
-}  
+}
